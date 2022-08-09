@@ -1,12 +1,11 @@
 package maven_intro.utils;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
 public class PropertiesReader {
 	
-
+	
 	private Properties prop;
 	private FileReader file = null;
 	

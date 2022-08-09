@@ -18,8 +18,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserSetup {
 
-	public static WebDriver setBrowser(String browserName) {
-		WebDriver driver = null;
+	private WebDriver driver = null;
+	/**
+	 * 
+	 * @param browserName
+	 * @return
+	 */
+	public WebDriver setBrowser(String browserName) {
 		String bN = browserName.toLowerCase();
 		switch (bN) {
 		case "chrome":
@@ -34,7 +39,24 @@ public class BrowserSetup {
 		default:
 			break;
 		}
-		
+		driver.manage().window().maximize();
 		return driver;
 	}
+
+	/**
+	 * 
+	 * @param driver
+	 */
+	public void quitBrowser(WebDriver driver) {
+		driver.quit();
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 */
+	public void closeBrowserInstance(WebDriver driver) {
+		driver.close();
+	}
+
 }
