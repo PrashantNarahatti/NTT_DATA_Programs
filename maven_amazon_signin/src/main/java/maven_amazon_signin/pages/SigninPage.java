@@ -13,9 +13,12 @@ public class SigninPage {
 	CommonMethods commonMethods;
 	
 	@FindBy(name = "q")
-	WebElement textbox;
+	WebElement textbox1;
 	
-	@FindBy(xpath = "(//label[@for='phone_mobile']")
+	@FindBy(name = "q")
+	WebElement textbox2;
+	
+	@FindBy(xpath = "(//input[@id='ap_email']")
 	WebElement firstSearchResult;
 	
 	@FindBy(xpath = "(//input[@id='ap_password']")
@@ -33,10 +36,10 @@ public class SigninPage {
 		PageFactory.initElements(driver , this);
 	}
 	
-	public void enterElement1(String by) {
+	public void enterElement1(String mobile_nomber) {
 		commonMethods = new CommonMethods();
-		commonMethods.enterText(textbox, by);
-		commonMethods.hitEnter(textbox);
+		commonMethods.enterText(textbox1, mobile_nomber);
+		commonMethods.hitEnter(textbox1);
 	}
 	
 	public void openFirstTextResult() {
@@ -44,10 +47,10 @@ public class SigninPage {
 		commonMethods.clickOnElement(ContinueButton);
 	}
 	
-	public void enterElement2(String by) {
+	public void enterElement2(String password) {
 		commonMethods = new CommonMethods();
-		commonMethods.enterText(textbox, by);
-		commonMethods.hitEnter(textbox);
+		commonMethods.enterText(textbox2, password);
+		commonMethods.hitEnter(textbox2);
 	}
 
 	public void openSecondTextResult() {
@@ -56,7 +59,6 @@ public class SigninPage {
 	}
 
 	public static WebElement findElement(By linkText) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

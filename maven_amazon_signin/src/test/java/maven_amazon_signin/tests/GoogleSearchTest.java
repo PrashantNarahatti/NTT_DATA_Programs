@@ -32,19 +32,21 @@ public class GoogleSearchTest {
 
 		SigninPage signinPage = new SigninPage(driver);
 		signinPage.enterElement1("6362762260");
-		signinPage.enterElement2("@Pacchu37");
 		signinPage.openFirstTextResult();
 
 		signinPage.findElement(By.linkText("Continue")).click();
 
-		if (SigninPage.contains("6362762260")) {
+		if (signinPage.contains("6362762260")) {
 			System.out.println("User Verified,Test case Passed");
 		} else {
 			System.out.println("User Verification Failed,Test case Failed");
 		}
 
+		signinPage.enterElement2("@Pacchu37");
+		signinPage.openSecondTextResult();
+
 		signinPage.findElement(By.linkText("Sign-in")).click();
-		if (SigninPage.contains("@Pacchu37")) {
+		if (signinPage.contains("@Pacchu37")) {
 			System.out.println("User Verified,Test case Passed");
 		} else {
 			System.out.println("User Verification Failed,Test case Failed");
